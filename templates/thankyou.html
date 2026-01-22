@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You!{% endblock %}
+
+{% block header_title %}Thank You!{% endblock %}
+
+{% block header_subtitle %}{% endblock %}
+
+{% block content %}
+<section class="thankyou-message">
+    <p>Your startup idea has been submitted successfully.</p>
+    <p>You will receive your AI evaluation report by email shortly.</p>
+
+    {% if form_data %}
+    <hr style="margin: 30px 0;">
+    <h3>Submission Summary</h3>
+    <div class="submission-summary">
+        {% if form_data.name %}
+        <p><strong>Name:</strong> {{ form_data.name }}</p>
+        {% endif %}
+        {% if form_data.email %}
+        <p><strong>Email:</strong> {{ form_data.email }}</p>
+        {% endif %}
+        {% if form_data.phone %}
+        <p><strong>Phone:</strong> {{ form_data.phone }}</p>
+        {% endif %}
+        {% if form_data.industry %}
+        <p><strong>Industry:</strong> {{ form_data.industry }}</p>
+        {% endif %}
+        {% if form_data.product_service %}
+        <p><strong>Product/Service:</strong> {{ form_data.product_service }}</p>
+        {% endif %}
+        {% if form_data.target_customers %}
+        <p><strong>Target Customers:</strong> {{ form_data.target_customers }}</p>
+        {% endif %}
+        {% if form_data.pricing_model %}
+        <p><strong>Pricing Model:</strong> {{ form_data.pricing_model }}</p>
+        {% endif %}
+        {% if form_data.stage %}
+        <p><strong>Stage:</strong> {{ form_data.stage }}</p>
+        {% endif %}
+        {% if form_data.team_size %}
+        <p><strong>Team Size:</strong> {{ form_data.team_size }}</p>
+        {% endif %}
+        {% if form_data.current_revenue %}
+        <p><strong>Current Monthly Revenue:</strong> {{ form_data.current_revenue }}</p>
+        {% endif %}
+        {% if form_data.country %}
+        <p><strong>Country/Primary Market:</strong> {{ form_data.country }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <a href="/form" class="btn">Submit another response</a>
+</section>
+{% endblock %}

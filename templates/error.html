@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Error{% endblock %}
+
+{% block header_title %}Oops, Something Went Wrong{% endblock %}
+
+{% block header_subtitle %}{% endblock %}
+
+{% block content %}
+<section class="error-message">
+    <div class="error-box">
+        <i class="fas fa-exclamation-circle"></i>
+        <h2>Validation Error</h2>
+        <p>Please check your submission and try again. Make sure all required fields are properly filled out:</p>
+        <ul>
+            <li><strong>Name:</strong> At least 2 characters</li>
+            <li><strong>Email:</strong> Valid email format (e.g., user@example.com)</li>
+        </ul>
+        <a href="/form" class="btn btn-primary">Back to Form</a>
+    </div>
+</section>
+
+<style>
+    .error-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    .error-box {
+        background: #fff3cd;
+        border: 2px solid #ffc107;
+        border-radius: 8px;
+        padding: 40px;
+        text-align: center;
+        max-width: 500px;
+    }
+
+    .error-box i {
+        font-size: 48px;
+        color: #ff6b6b;
+        margin-bottom: 20px;
+    }
+
+    .error-box h2 {
+        color: #d63031;
+        margin-bottom: 15px;
+    }
+
+    .error-box ul {
+        text-align: left;
+        margin: 20px 0;
+        line-height: 1.8;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}

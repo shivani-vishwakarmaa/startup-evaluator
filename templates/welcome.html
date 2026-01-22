@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Startup Evaluator{% endblock %}
+
+{% block header_title %}Welcome to Startup Evaluator{% endblock %}
+
+{% block header_subtitle %}
+<p>Your AI-powered platform to evaluate startup ideas like a professional VC!</p>
+{% endblock %}
+
+{% block content %}
+<section class="about-app">
+    <h2>What We Do</h2>
+    <p>Startup Evaluator helps you understand the potential of your startup idea quickly and easily.</p>
+    <ul>
+        <li>Analyze your startup like a VC would</li>
+        <li>Get a startup score and probability of success</li>
+        <li>Receive a detailed report directly in your email</li>
+        <li>Make better decisions before building or pitching</li>
+    </ul>
+</section>
+
+<section class="how-it-helps">
+    <h2>How It Helps You</h2>
+    <p>Our AI-powered evaluation platform gives you insights about your idea that you would normally need months of
+        market research to get.</p>
+    <ol>
+        <li>Submit your startup details in a simple form</li>
+        <li>Our AI evaluates your idea and generates a report</li>
+        <li>Receive actionable feedback via email</li>
+    </ol>
+</section>
+
+<section class="cta">
+    <h2>Ready to Evaluate Your Startup?</h2>
+    <p>Click the button below to submit your idea and get started.</p>
+    <a href="/form" class="btn">Submit Your Startup Idea</a>
+</section>
+{% endblock %}

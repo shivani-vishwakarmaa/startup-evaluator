@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Startup Evaluator{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <i class="fas fa-rocket"></i> Startup Evaluator
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="/form" class="nav-link"><i class="fas fa-pen-fancy"></i> Form</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>{% block header_title %}Rate Your Idea{% endblock %}</h1>
+        {% block header_subtitle %}
+        <p>Submit your startup details below and get an AI‑powered evaluation like a VC.</p>
+        {% endblock %}
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Child templates will override this block -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Startup Evaluator. Your idea is confidential.</p>
+    </footer>
+</body>
+
+</html>

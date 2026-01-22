@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Rate Your Startup Idea{% endblock %}
+
+{% block content %}
+<section class="form-section">
+     <a href="/" class="btn">Back</a>
+    <h2>Startup Evaluation Form</h2>
+    <form action="/submit" method="POST">
+        <input type="text" name="name" placeholder="Founder Name *" required>
+        <input type="email" name="email" placeholder="Founder Email *" required>
+
+        <select name="industry" required>
+            <option value="" disabled selected>Select Industry *</option>
+            <option value="SaaS">SaaS</option>
+            <option value="B2B Marketplace">B2B Marketplace</option>
+            <option value="B2C Marketplace">B2C Marketplace</option>
+            <option value="Fintech">Fintech</option>
+            <option value="Edtech">Edtech</option>
+            <option value="Healthtech">Healthtech</option>
+            <option value="E-commerce / D2C">E-commerce / D2C</option>
+            <option value="AI / ML">AI / ML</option>
+            <option value="Logistics / Supply Chain">Logistics / Supply Chain</option>
+            <option value="Agritech">Agritech</option>
+            <option value="Proptech">Proptech</option>
+            <option value="Deeptech">Deeptech</option>
+            <option value="Consumer Apps">Consumer Apps</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Web3 / Blockchain">Web3 / Blockchain</option>
+            <option value="Climate Tech">Climate Tech</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <input type="text" name="phone" placeholder="Phone number">
+        <input type="text" name="product_service" placeholder="Product/Service *" required>
+        <input type="text" name="target_customers" placeholder="Target Customers *" required>
+        <input type="text" name="pricing_model" placeholder="Pricing Model *" required>
+        <input type="text" name="stage" placeholder="Stage (Idea / MVP / etc) *" required>
+
+        <label>Team Size *</label>
+        <div class="radio-group">
+            <label><input type="radio" name="team_size" value="1-3" required> 1–3</label>
+            <label><input type="radio" name="team_size" value="3-10"> 3–10</label>
+            <label><input type="radio" name="team_size" value="10-50"> 10–50</label>
+            <label><input type="radio" name="team_size" value="50+"> 50+</label>
+        </div>
+
+        <input type="text" name="current_revenue" placeholder="Current Monthly Revenue (USD) *" required>
+        <input type="text" name="country" placeholder="Country / Primary Market *" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+{% endblock %}
