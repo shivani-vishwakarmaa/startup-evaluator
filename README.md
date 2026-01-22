@@ -24,7 +24,6 @@ The Startup Evaluator is a Flask-based web application designed to gather compre
 ```
 startup-evaluator/
 ├── app.py                     # Flask application & routes
-├── validators.py              # Form validation logic
 ├── README.md                  # Project documentation
 ├── services/
 │   ├── make_service.py        # Make.com webhook integration
@@ -45,7 +44,7 @@ The application follows the **Model-View-Controller** pattern:
 
 - **View (V)**: HTML templates in `templates/` + CSS in `static/` - what users see and interact with
 - **Controller (C)**: Flask routes in `app.py` - handle HTTP requests, coordinate between View and Model
-- **Model (M)**: Business logic in `validators.py` and `services/make_service.py` - data processing and Make.com integration
+- **Model (M)**: Business logic in `services/validators.py` and `services/make_service.py` - data processing and Make.com integration
 
 ### Request Flow
 
