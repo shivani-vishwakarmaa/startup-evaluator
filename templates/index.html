@@ -4,9 +4,11 @@
 
 {% block content %}
 <section class="form-section">
-     <a href="/" class="btn">Back</a>
+    <a href="/" class="btn">Back</a>
     <h2>Startup Evaluation Form</h2>
+
     <form action="/submit" method="POST">
+
         <input type="text" name="name" placeholder="Founder Name *" required>
         <input type="email" name="email" placeholder="Founder Email *" required>
 
@@ -32,10 +34,20 @@
         </select>
 
         <input type="text" name="phone" placeholder="Phone number">
-        <input type="text" name="product_service" placeholder="Product/Service *" required>
+
+        <input type="text" name="product_service" placeholder="Product / Service *" required>
+
+        <!-- NEW: Problem Statement -->
+        <textarea name="problem_statement" placeholder="What problem are you solving? *" required></textarea>
+
         <input type="text" name="target_customers" placeholder="Target Customers *" required>
+
+        <!-- NEW: Differentiation -->
+        <textarea name="differentiation" placeholder="How is your product different from existing solutions? *" required></textarea>
+
         <input type="text" name="pricing_model" placeholder="Pricing Model *" required>
-        <input type="text" name="stage" placeholder="Stage (Idea / MVP / etc) *" required>
+
+        <input type="text" name="stage" placeholder="Stage (Idea / MVP / Revenue) *" required>
 
         <label>Team Size *</label>
         <div class="radio-group">
@@ -46,7 +58,26 @@
         </div>
 
         <input type="text" name="current_revenue" placeholder="Current Monthly Revenue (USD) *" required>
+
         <input type="text" name="country" placeholder="Country / Primary Market *" required>
+
+        <!-- NEW: Competitors -->
+        <textarea name="competitors" placeholder="Known Competitors (optional)"></textarea>
+
+        <!-- NEW: Willingness to Pay -->
+       <label for="willingness_to_pay">Customer Willingness to Pay *</label>
+<select name="willingness_to_pay" id="willingness_to_pay" required>
+    <option value="" disabled selected>Select an option</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+    <option value="Unsure">Unsure</option>
+</select>
+
+<small class="helper-text">
+How likely are your target customers to pay for this product based on your understanding?
+</small>
+
 
         <button type="submit">Submit</button>
     </form>
