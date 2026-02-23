@@ -419,12 +419,12 @@ footer {
 }
 
 .about-app ul,
-.how-it-helps ol {
+.how-it-helps ul {
     padding-left: 20px;
 }
 
 .about-app ul li,
-.how-it-helps ol li {
+.how-it-helps ul li {
     margin-bottom: 12px;
     color: #d0d0d0;
     line-height: 1.8;
