@@ -21,9 +21,6 @@
         {% if form_data.email %}
         <p><strong>Email:</strong> {{ form_data.email }}</p>
         {% endif %}
-        {% if form_data.phone %}
-        <p><strong>Phone:</strong> {{ form_data.phone }}</p>
-        {% endif %}
         {% if form_data.industry %}
         <p><strong>Industry:</strong> {{ form_data.industry }}</p>
         {% endif %}
@@ -51,17 +48,8 @@
         {% if form_data.current_revenue %}
         <p><strong>Current Monthly Revenue:</strong> {{ form_data.current_revenue }}</p>
         {% endif %}
-        {% if form_data.country %}
-        <p><strong>Country/Primary Market:</strong> {{ form_data.country }}</p>
-        {% endif %}
-        {% if form_data.competitors %}
-        <p><strong>Competitors:</strong> {{ form_data.competitors }}</p>
-        {% endif %}
         {% if form_data.validation %}
         <p><strong>Validation:</strong> {{ form_data.validation }}</p>
-        {% endif %}
-        {% if form_data.willingness_to_pay %}
-        <p><strong>Willingness to Pay:</strong> {{ form_data.willingness_to_pay }}</p>
         {% endif %}
     </div>
     {% endif %}

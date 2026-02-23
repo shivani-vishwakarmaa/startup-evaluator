@@ -12,7 +12,6 @@
         <!-- Founder Info -->
         <input type="text" name="name" placeholder="Founder Name *" required>
         <input type="email" name="email" placeholder="Founder Email *" required>
-        <input type="tel" name="phone" placeholder="Phone Number">
 
         <!-- Industry -->
         <select name="industry" id="industry-select" required>
@@ -35,9 +34,8 @@
             <option value="Climate Tech">Climate Tech</option>
             <option value="Other">Other</option>
         </select>
-        <input type="text" name="industry_other" id="industry-other"
-               placeholder="Please specify industry"
-               style="display:none; margin-top:0.5rem;">
+        <input type="text" name="industry_other" id="industry-other" placeholder="Please specify industry"
+            style="display:none; margin-top:0.5rem;">
 
         <!-- Product -->
         <input type="text" name="product_service" placeholder="Product / Service *" required>
@@ -47,8 +45,8 @@
             placeholder="What problem are you solving? Who faces it and how often?"></textarea>
 
         <!-- Target Customers -->
-        <input type="text" name="target_customers"
-               placeholder="Target Customers (e.g. SMBs, Students, Enterprises) *" required>
+        <input type="text" name="target_customers" placeholder="Target Customers (e.g. SMBs, Students, Enterprises) *"
+            required>
 
         <!-- Differentiation -->
         <textarea name="differentiation"
@@ -56,7 +54,7 @@
 
         <!-- Pricing -->
         <input type="text" name="pricing_model"
-               placeholder="Pricing Model (e.g. $29/month, per user, commission, freemium) *" required>
+            placeholder="Pricing Model (e.g. $29/month, per user, commission, freemium) *" required>
 
         <!-- Stage -->
         <select name="stage" id="stage-select" required>
@@ -67,9 +65,8 @@
             <option value="Scaling">Scaling</option>
             <option value="Other">Other</option>
         </select>
-        <input type="text" name="stage_other" id="stage-other"
-               placeholder="Please specify stage"
-               style="display:none; margin-top:0.5rem;">
+        <input type="text" name="stage_other" id="stage-other" placeholder="Please specify stage"
+            style="display:none; margin-top:0.5rem;">
 
         <!-- Team Size -->
         <label>Team Size *</label>
@@ -80,43 +77,19 @@
             <label><input type="radio" name="team_size" value="50+"> 50+</label>
             <label><input type="radio" name="team_size" value="Other"> Other</label>
         </div>
-        <input type="text" name="team_size_other" id="team-size-other"
-               placeholder="Please specify team size"
-               style="display:none; margin-top:0.5rem;">
+        <input type="text" name="team_size_other" id="team-size-other" placeholder="Please specify team size"
+            style="display:none; margin-top:0.5rem;">
 
         <!-- Revenue -->
-        <input type="number" name="current_revenue"
-               placeholder="Current Monthly Revenue (USD) *"
-               min="0" step="any" required>
+        <input type="number" name="current_revenue" placeholder="Current Monthly Revenue (USD) *" min="0" step="any"
+            required>
 
-        <!-- Market -->
-        <input type="text" name="country"
-               placeholder="Country / Primary Market *" required>
 
-        <!-- Competitors -->
-        <textarea name="competitors"
-            placeholder="Known competitors (optional)"></textarea>
 
         <!-- Validation -->
         <textarea name="validation"
             placeholder="What proof do you have that users want this? (users, revenue, pilots, waitlist)"></textarea>
 
-        <!-- Willingness to Pay -->
-        <label for="willingness_to_pay">Customer Willingness to Pay *</label>
-        <select name="willingness_to_pay" id="willingness-to-pay-select" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-            <option value="Unsure">Unsure</option>
-            <option value="Other">Other</option>
-        </select>
-        <input type="text" name="willingness_to_pay_other" id="willingness-to-pay-other"
-               placeholder="Please specify willingness to pay"
-               style="display:none; margin-top:0.5rem;">
-        <small class="helper-text">
-            Based on your understanding of customer behavior.
-        </small>
 
         <button type="submit">Submit</button>
     </form>
@@ -155,7 +128,7 @@
     const teamRadios = document.getElementsByName('team_size');
     const teamOther = document.getElementById('team-size-other');
     teamRadios.forEach(radio => {
-        radio.addEventListener('change', function() {
+        radio.addEventListener('change', function () {
             if (this.value === 'Other') {
                 teamOther.style.display = 'block';
                 teamOther.required = true;
@@ -167,18 +140,5 @@
         });
     });
 
-    // Willingness to Pay "Other"
-    const paySelect = document.getElementById('willingness-to-pay-select');
-    const payOther = document.getElementById('willingness-to-pay-other');
-    paySelect.addEventListener('change', function () {
-        if (this.value === 'Other') {
-            payOther.style.display = 'block';
-            payOther.required = true;
-        } else {
-            payOther.style.display = 'none';
-            payOther.required = false;
-            payOther.value = '';
-        }
-    });
 </script>
 {% endblock %}

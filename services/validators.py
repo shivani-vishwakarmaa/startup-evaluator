@@ -46,20 +46,12 @@ def validate_form(form):
             return None
         team_size = team_size_other
 
-    # determine willingness to pay selection
-    willingness = form.get("willingness_to_pay", "").strip()
-    if willingness == "Other":
-        willingness_other = form.get("willingness_to_pay_other", "").strip()
-        if not willingness_other:
-            return None
-        willingness = willingness_other
 
     # Sanitize and return form data
     return {
         "name": sanitize_string(name),
         "email": sanitize_string(email),
         "industry": sanitize_string(industry),
-        "phone": sanitize_string(form.get("phone", "")),
         "product_service": sanitize_string(form.get("product_service", "")),
         "problem_statement": sanitize_string(form.get("problem_statement", "")),
         "target_customers": sanitize_string(form.get("target_customers", "")),
@@ -68,8 +60,6 @@ def validate_form(form):
         "stage": sanitize_string(stage),
         "team_size": sanitize_string(team_size),
         "current_revenue": sanitize_string(form.get("current_revenue", "")),
-        "country": sanitize_string(form.get("country", "")),
-        "competitors": sanitize_string(form.get("competitors", "")),
         "validation": sanitize_string(form.get("validation", "")),
-        "willingness_to_pay": sanitize_string(willingness),
+        # removed fields: phone, country, competitors, willingness_to_pay
     }

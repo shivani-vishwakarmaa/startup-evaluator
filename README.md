@@ -10,12 +10,12 @@ The StartupSignal is a Flask-based web application designed to gather comprehens
 
 - **Welcome Page**: Introduction to the evaluation process
 - **Comprehensive Form**: Collects detailed startup information including:
-  - Basic details (name, email, phone, country)
+  - Basic details (name and email)
   - Business information (industry with "Other" option that reveals a custom text field, product/service, problem statement, target customers, differentiation)
   - Financial data (pricing model, current revenue)
   - Stage and team size (each with "Other" alternatives)
-  - Customer insights (validation evidence, willingness-to-pay with optional custom entry)
-- **Form Validation**: Server-side validation for data integrity
+  - Customer insights (validation evidence)
+- **Form Validation**: Server-side validation for data integrity (phone, country, competitors, willingness-to-pay fields removed)
 - **Make.com Integration**: Automated webhook submission to Make.com for processing
 - **Thank You Page**: Confirmation page with submitted data summary
 - **Error Handling**: Dedicated error pages for validation and submission failures
@@ -115,7 +115,7 @@ The application validates the following required fields:
 
 - **Name**: Minimum 2 characters
 - **Email**: Must contain "@" symbol
-- **Optional fields**: Industry, phone, product/service, target customers, pricing model, stage, team size, revenue, country
+- **Optional fields**: Industry, product/service, target customers, pricing model, stage, team size, revenue
 
 Validation occurs at two levels:
 1. **Client-side** (HTML5 attributes)
