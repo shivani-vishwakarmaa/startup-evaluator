@@ -30,8 +30,14 @@
         {% if form_data.product_service %}
         <p><strong>Product/Service:</strong> {{ form_data.product_service }}</p>
         {% endif %}
+        {% if form_data.problem_statement %}
+        <p><strong>Problem Statement:</strong> {{ form_data.problem_statement }}</p>
+        {% endif %}
         {% if form_data.target_customers %}
         <p><strong>Target Customers:</strong> {{ form_data.target_customers }}</p>
+        {% endif %}
+        {% if form_data.differentiation %}
+        <p><strong>Differentiation:</strong> {{ form_data.differentiation }}</p>
         {% endif %}
         {% if form_data.pricing_model %}
         <p><strong>Pricing Model:</strong> {{ form_data.pricing_model }}</p>
@@ -47,6 +53,15 @@
         {% endif %}
         {% if form_data.country %}
         <p><strong>Country/Primary Market:</strong> {{ form_data.country }}</p>
+        {% endif %}
+        {% if form_data.competitors %}
+        <p><strong>Competitors:</strong> {{ form_data.competitors }}</p>
+        {% endif %}
+        {% if form_data.validation %}
+        <p><strong>Validation:</strong> {{ form_data.validation }}</p>
+        {% endif %}
+        {% if form_data.willingness_to_pay %}
+        <p><strong>Willingness to Pay:</strong> {{ form_data.willingness_to_pay }}</p>
         {% endif %}
     </div>
     {% endif %}

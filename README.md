@@ -11,9 +11,10 @@ The Startup Evaluator is a Flask-based web application designed to gather compre
 - **Welcome Page**: Introduction to the evaluation process
 - **Comprehensive Form**: Collects detailed startup information including:
   - Basic details (name, email, phone, country)
-  - Business information (industry, product/service, target customers)
+  - Business information (industry with "Other" option that reveals a custom text field, product/service, problem statement, target customers, differentiation)
   - Financial data (pricing model, current revenue)
-  - Team & stage information (team size, current stage)
+  - Stage and team size (each with "Other" alternatives)
+  - Customer insights (validation evidence, willingness-to-pay with optional custom entry)
 - **Form Validation**: Server-side validation for data integrity
 - **Make.com Integration**: Automated webhook submission to Make.com for processing
 - **Thank You Page**: Confirmation page with submitted data summary

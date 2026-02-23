@@ -9,10 +9,13 @@
 
     <form action="/submit" method="POST">
 
+        <!-- Founder Info -->
         <input type="text" name="name" placeholder="Founder Name *" required>
         <input type="email" name="email" placeholder="Founder Email *" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
 
-        <select name="industry" required>
+        <!-- Industry -->
+        <select name="industry" id="industry-select" required>
             <option value="" disabled selected>Select Industry *</option>
             <option value="SaaS">SaaS</option>
             <option value="B2B Marketplace">B2B Marketplace</option>
@@ -32,54 +35,150 @@
             <option value="Climate Tech">Climate Tech</option>
             <option value="Other">Other</option>
         </select>
+        <input type="text" name="industry_other" id="industry-other"
+               placeholder="Please specify industry"
+               style="display:none; margin-top:0.5rem;">
 
-        <input type="text" name="phone" placeholder="Phone number">
-
+        <!-- Product -->
         <input type="text" name="product_service" placeholder="Product / Service *" required>
 
-        <!-- NEW: Problem Statement -->
-        <textarea name="problem_statement" placeholder="What problem are you solving? *" required></textarea>
+        <!-- Problem -->
+        <textarea name="problem_statement"
+            placeholder="What problem are you solving? Who faces it and how often?"></textarea>
 
-        <input type="text" name="target_customers" placeholder="Target Customers *" required>
+        <!-- Target Customers -->
+        <input type="text" name="target_customers"
+               placeholder="Target Customers (e.g. SMBs, Students, Enterprises) *" required>
 
-        <!-- NEW: Differentiation -->
-        <textarea name="differentiation" placeholder="How is your product different from existing solutions? *" required></textarea>
+        <!-- Differentiation -->
+        <textarea name="differentiation"
+            placeholder="How is your product different from existing solutions?"></textarea>
 
-        <input type="text" name="pricing_model" placeholder="Pricing Model *" required>
+        <!-- Pricing -->
+        <input type="text" name="pricing_model"
+               placeholder="Pricing Model (e.g. $29/month, per user, commission, freemium) *" required>
 
-        <input type="text" name="stage" placeholder="Stage (Idea / MVP / Revenue) *" required>
+        <!-- Stage -->
+        <select name="stage" id="stage-select" required>
+            <option value="" disabled selected>Select Stage *</option>
+            <option value="Idea">Idea</option>
+            <option value="MVP">MVP</option>
+            <option value="Early Revenue">Early Revenue</option>
+            <option value="Scaling">Scaling</option>
+            <option value="Other">Other</option>
+        </select>
+        <input type="text" name="stage_other" id="stage-other"
+               placeholder="Please specify stage"
+               style="display:none; margin-top:0.5rem;">
 
+        <!-- Team Size -->
         <label>Team Size *</label>
         <div class="radio-group">
             <label><input type="radio" name="team_size" value="1-3" required> 1–3</label>
             <label><input type="radio" name="team_size" value="3-10"> 3–10</label>
             <label><input type="radio" name="team_size" value="10-50"> 10–50</label>
             <label><input type="radio" name="team_size" value="50+"> 50+</label>
+            <label><input type="radio" name="team_size" value="Other"> Other</label>
         </div>
+        <input type="text" name="team_size_other" id="team-size-other"
+               placeholder="Please specify team size"
+               style="display:none; margin-top:0.5rem;">
 
-        <input type="text" name="current_revenue" placeholder="Current Monthly Revenue (USD) *" required>
+        <!-- Revenue -->
+        <input type="number" name="current_revenue"
+               placeholder="Current Monthly Revenue (USD) *"
+               min="0" step="any" required>
 
-        <input type="text" name="country" placeholder="Country / Primary Market *" required>
+        <!-- Market -->
+        <input type="text" name="country"
+               placeholder="Country / Primary Market *" required>
 
-        <!-- NEW: Competitors -->
-        <textarea name="competitors" placeholder="Known Competitors (optional)"></textarea>
+        <!-- Competitors -->
+        <textarea name="competitors"
+            placeholder="Known competitors (optional)"></textarea>
 
-        <!-- NEW: Willingness to Pay -->
-       <label for="willingness_to_pay">Customer Willingness to Pay *</label>
-<select name="willingness_to_pay" id="willingness_to_pay" required>
-    <option value="" disabled selected>Select an option</option>
-    <option value="Low">Low</option>
-    <option value="Medium">Medium</option>
-    <option value="High">High</option>
-    <option value="Unsure">Unsure</option>
-</select>
+        <!-- Validation -->
+        <textarea name="validation"
+            placeholder="What proof do you have that users want this? (users, revenue, pilots, waitlist)"></textarea>
 
-<small class="helper-text">
-How likely are your target customers to pay for this product based on your understanding?
-</small>
-
+        <!-- Willingness to Pay -->
+        <label for="willingness_to_pay">Customer Willingness to Pay *</label>
+        <select name="willingness_to_pay" id="willingness-to-pay-select" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Unsure">Unsure</option>
+            <option value="Other">Other</option>
+        </select>
+        <input type="text" name="willingness_to_pay_other" id="willingness-to-pay-other"
+               placeholder="Please specify willingness to pay"
+               style="display:none; margin-top:0.5rem;">
+        <small class="helper-text">
+            Based on your understanding of customer behavior.
+        </small>
 
         <button type="submit">Submit</button>
     </form>
 </section>
+
+<script>
+    // Industry "Other"
+    const industrySelect = document.getElementById('industry-select');
+    const industryOther = document.getElementById('industry-other');
+    industrySelect.addEventListener('change', function () {
+        if (this.value === 'Other') {
+            industryOther.style.display = 'block';
+            industryOther.required = true;
+        } else {
+            industryOther.style.display = 'none';
+            industryOther.required = false;
+            industryOther.value = '';
+        }
+    });
+
+    // Stage "Other"
+    const stageSelect = document.getElementById('stage-select');
+    const stageOther = document.getElementById('stage-other');
+    stageSelect.addEventListener('change', function () {
+        if (this.value === 'Other') {
+            stageOther.style.display = 'block';
+            stageOther.required = true;
+        } else {
+            stageOther.style.display = 'none';
+            stageOther.required = false;
+            stageOther.value = '';
+        }
+    });
+
+    // Team Size "Other"
+    const teamRadios = document.getElementsByName('team_size');
+    const teamOther = document.getElementById('team-size-other');
+    teamRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'Other') {
+                teamOther.style.display = 'block';
+                teamOther.required = true;
+            } else {
+                teamOther.style.display = 'none';
+                teamOther.required = false;
+                teamOther.value = '';
+            }
+        });
+    });
+
+    // Willingness to Pay "Other"
+    const paySelect = document.getElementById('willingness-to-pay-select');
+    const payOther = document.getElementById('willingness-to-pay-other');
+    paySelect.addEventListener('change', function () {
+        if (this.value === 'Other') {
+            payOther.style.display = 'block';
+            payOther.required = true;
+        } else {
+            payOther.style.display = 'none';
+            payOther.required = false;
+            payOther.value = '';
+        }
+    });
+</script>
 {% endblock %}
