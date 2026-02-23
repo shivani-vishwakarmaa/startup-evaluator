@@ -1,10 +1,10 @@
-# Startup Evaluator
+# StartupSignal
 
 A web application that collects and evaluates startup information through a user-friendly form, integrating with Make.com for automated data processing.
 
 ## Overview
 
-The Startup Evaluator is a Flask-based web application designed to gather comprehensive information about startups and route it to Make.com for processing and evaluation. The application features a multi-step evaluation process with robust form validation and error handling.
+The StartupSignal is a Flask-based web application designed to gather comprehensive information about startups and route it to Make.com for processing and evaluation. The application features a multi-step evaluation process with robust form validation and error handling.
 
 ## Features
 
